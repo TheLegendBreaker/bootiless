@@ -1,0 +1,26 @@
+@use "mixins.scss";
+
+.section--products {
+	.card__caption {
+		display: none;
+	}
+	.card__figure {
+		&:before{
+			background-image: url("https://api.hectordiaz.pro/sms/wp-content/uploads/sites/7/2022/10/sugar_moon_syrups_grapefruit_cordial_bottle_alpha_w_padding.png");
+			@include mixins.square(120%);
+			background-repeat: space;
+			transform: rotate(30deg);
+			background-size: 90px;
+			position: absolute;
+			content: "";
+			//bottom: 0;
+			//right: 0;
+			left: 0;
+			top: 0;
+		}
+		&-img {
+			transition: none;
+			margin: 0;
+		}
+	}
+}

@@ -1,0 +1,211 @@
+@use "animations.scss";
+@use "mixins.scss";
+
+.section.section--hero {
+	position: relative;
+	@include mixins.smart-phone {
+		height: calc(100vh - 5rem);
+	}
+	.section__bg {
+		@mixin styles {
+			transform: translate(-50%, -50%);
+			position: absolute;
+			height: 100%;
+			width: 100vw;
+			left: 50%;
+			bottom: 0;
+			top: 50%;
+		}
+
+		@mixin inherit-center-xy {
+			transform: inherit;
+			position: inherit;
+			left: inherit;
+			top: inherit;
+		}
+
+		@mixin pseudo {
+			@include inherit-center-xy;
+			@include mixins.pseudo;
+		}
+
+		@mixin inherit-styles {
+			@include inherit-center-xy;
+			height: inherit;
+			bottom: inherit;
+			width: inherit;
+		}
+
+		background-image: url("https://api.hectordiaz.pro/sms/wp-content/uploads/sites/7/2022/10/valkyrie-pierce-zo2d8e1NWC8-unsplash-min-scaled-e1666068011875.jpg");
+		background-size: cover;
+		overflow: hidden;
+		@include styles;
+		&-astro {
+			@include inherit-styles;
+			backdrop-filter: blur(3px);
+			filter: blur(.5px);
+			opacity: .45;
+			&:before {
+				background-image: url("https://api.hectordiaz.pro/sms/wp-content/uploads/sites/7/2022/10/astronomie-wheel_white_alpha-min.png");
+				background-repeat: no-repeat;
+				@include mixins.square(160vw);
+				background-position: center;
+				background-size: contain;
+				@include animations.spin;
+				@include pseudo;
+				z-index: -5;
+				@include mixins.laptop {
+					@include mixins.square(80vw);
+				}
+			}
+			&:after {
+				background-image: url("https://api.hectordiaz.pro/sms/wp-content/uploads/sites/7/2022/10/astronomie_bg_w_aplha-min.png");
+				//linear-gradient(0deg, #8bbbb5, transparent),
+				background-position: center;
+				background-size: cover;
+				@include pseudo;
+				z-index: -10;
+				height: 100%;
+				width: 100%;
+				@include mixins.tablet {
+					background-size: 130%;
+				}
+				@include mixins.desktop {
+					background-size: cover;
+				}
+			}
+		}
+
+		&-clouds {
+		}
+
+		&-hero {
+				@include inherit-styles;
+				&:before {
+					background-image: url("https://api.hectordiaz.pro/sms/wp-content/uploads/sites/7/2022/10/sugar_moon_syrups_grapefruit_cordial-removebg-min.png");
+					filter: brightness(1.3) saturate(.9) blur(.3px);
+					background-repeat: no-repeat;
+					@include mixins.square(100%);
+					background-size: contain;
+					@include mixins.pseudo;
+					position: absolute;
+					left: auto;
+					bottom: 0;
+					@include mixins.laptop{
+						left: 50%;
+					}
+				}
+		}
+	}
+	.section__about {
+		background-image: linear-gradient(180deg, transparent, #fff 70%);
+		border-radius: 50vw 50vw 0 0;
+		border: solid 1px #fff;
+		margin-bottom: 30px;
+		position: relative;
+		padding: 15px;
+		@mixin pseudo($offest) {
+			border-radius: inherit;
+			position: absolute;
+			border: inherit;
+			width: 100%;
+			z-index: -5;
+			content: "";
+			bottom: 0;
+			left: 0;
+			@include mixins.desktop {
+				transform: translateX(-50%);
+				width: $offest;
+				height: 100%;
+				left: 50%;
+			}
+		}
+		&:before {
+			@include pseudo(110%);
+			height: 110%;
+		}
+
+		&:after {
+			@include pseudo(120%);
+			height: 120%;
+		}
+
+		@include mixins.smart-phone {
+			transform: translate(-50%, -50%);
+			position: absolute;
+			margin-left: 0;
+			margin-top: 0;
+			width: 100%;
+			left: 50%;
+			top: 50%;
+		}
+
+		@include mixins.tablet {
+			transform: translateY(-50%);
+			padding: 15px 20px;
+			width: 70%;
+			left: 0;
+		}
+
+		@include mixins.tablet {
+			width: 50%;
+		}
+
+		@include mixins.desktop {
+			border-radius: 50vh;
+			padding: 15px 40px;
+			padding-right: 70px;
+			width: 60%;
+		}
+
+		@mixin hero {
+			vertical-align: middle;
+			display: inline-block;
+		}
+
+		&-logo {
+			max-width: 60%;
+			margin: 0 auto;
+			opacity: 0;
+			@include mixins.smart-phone(true) {
+				max-width: 90%;
+			}
+			@include mixins.tablet {
+				max-width: none;
+			}
+			@include mixins.desktop {
+				max-width: 40%;
+				@include hero;
+				margin: 0 auto;
+			}
+			&--fade-up {
+				@include animations.fadeUp();
+			}
+			&-file {
+				width: 100%;
+			}
+		}
+
+		&-body {
+			@include mixins.desktop {
+				max-width: 59%;
+				@include hero;
+			}
+		}
+
+		&-title {
+			text-align: center;
+			margin-top: 0;
+			&-name {
+				font-family: mont_heavy;
+				font-size: 2rem;
+			}
+			&-tagline {
+				font-size: 1.4rem;
+			}
+		}
+		&-cta {
+			margin-top: 15px;
+		}
+	}
+}

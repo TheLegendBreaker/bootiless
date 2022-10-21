@@ -1,0 +1,9 @@
+{
+	"tagline": ["A bewitching space", "to chat or", "start your day"],
+	"apiAddress": "https://api.hectordiaz.pro/crumbling-castle",
+	"address": ["1001 goth dr", "Nowheresville, SM", "85955"],
+	"company": ["", "Coffee and reading bar"],
+	"website": "design.hectordiaz.pro/crumblingCaslte",
+	"navLinks": ["#contact", "#products", "#about"],
+	"logo": "src"
+}

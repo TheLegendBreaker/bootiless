@@ -1,0 +1,23 @@
+@use "mixins.scss";
+
+.section.section--navbar {
+	max-width: none;
+	.section__nav {
+		text-align: center;
+		margin: 15px auto;
+		&-link {
+			&--selected {
+				font-family: mont_heavy;
+			}
+			@include mixins.sm-smart-phone(true) {
+				text-align: left;
+				max-width: 120px;
+				margin: 0 auto;
+				display: block;
+			}
+			@include mixins.smart-phone {
+				padding: 15px 5px;
+			}
+		}
+	}
+}

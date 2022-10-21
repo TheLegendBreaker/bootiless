@@ -1,0 +1,57 @@
+@use "animations.scss";
+@use "mixins.scss";
+
+.section {
+	padding-bottom: 30px;
+	max-width: 80%;
+	margin: 0 auto;
+	@include mixins.desktop {
+		font-size: 1.5rem;
+	}
+	&__title {
+		text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+			1px 1px 0 #fff;
+			font-size: 2rem;
+		&--sr {
+			position: absolute;
+			opacity: 0;
+		}
+	}
+	&__intro {
+	}
+	&__profile {
+		&-crop {
+			border-radius: 100px;
+			overflow: hidden;
+			height: 200px;
+			width: 200px;
+			@include mixins.tablet {
+				vertical-align: middle;
+				display: inline-block;
+			}
+		}
+		&-img {
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+		}
+	}
+	&__msg {
+		@include mixins.tablet {
+			width: calc(100% - 200px);
+			vertical-align: middle;
+			display: inline-block;
+			padding: 0 30px;
+		}
+	}
+	&--loading {
+		@include animations.pulse();
+	}
+	&__loading {
+		font-family: mont_heavy;
+		text-align: center;
+		font-size: 2rem;
+		padding: 50px;
+		width: 100%;
+	}
+}

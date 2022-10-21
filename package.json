@@ -1,0 +1,31 @@
+{
+  "name": "bootiless",
+  "version": "1.0.0",
+  "description": "A basic website boiler plate for the D_cap headless WordPress theme",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheLegendBreaker/bootiless.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "wordpress",
+    "headless",
+    "template",
+    "SCSS",
+    "PUG"
+  ],
+  "author": "Hector Diaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheLegendBreaker/bootiless/issues"
+  },
+  "homepage": "https://github.com/TheLegendBreaker/bootiless#readme",
+  "devDependencies": {
+    "pug": "^3.0.2",
+    "scss": "^0.2.4"
+  }
+}
