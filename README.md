@@ -51,3 +51,11 @@ scss/
 	| ./index.scss
 	| ./conf.scss
 
+### JavaScript
+
+ ** Dir Tree **
+js/
+	| ./renderPage.js
+	| ./lib.js
+
+---
